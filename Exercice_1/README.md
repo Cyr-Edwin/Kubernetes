@@ -15,7 +15,7 @@
 
 ## Creating a ClusterRole and ClusterRoleBinding
 
-*  Create a ***ClusterRole** with the name api-clusterrole
+*  Create a **ClusterRole** with the name api-clusterrole
 
 > kubectl create clusterrole api-clusterrole --verb=watch,list,get --resource=pods
 
@@ -36,9 +36,17 @@
 
 * Create a **Pod** named operator with the image nginx:1.21.1 in the name space apps. Expose the container port 80. Assign the ServiceAccount api-access to the pod
 
->
+> kubectl run operator --image:nginx:1.21.1 --restard=Never --port:80 --serviceaccount=api-access -n apps
 
 
 * Create another **Pod** named disposable with the image nginx:1.21.1 in the namespace rm. Do not assign the ServiceAccount to the Pod
 
->
+> kubectl create namespace rm
+
+> kubectl run disposable --image=nginx:1.21.1 --restard=Never -n rm
+
+* Verify that both Pods have been created
+
+> kubectl get pod operator -n apps
+
+> kubectl get pod disposable -n rm
