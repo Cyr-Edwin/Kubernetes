@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  creationTimestamp: null
+  name: web-frontend
+  namespace: wed
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: web-frontend
+  strategy: {}
+  template:
+    metadata:
+      creationTimestamp: null
+      labels:
+        app: web-frontend
+    spec:
+      containers:
+      - image: redis
+        name: redis
+        ports:
+        - containerPort: 80
+        resources: {}
+status: {}
