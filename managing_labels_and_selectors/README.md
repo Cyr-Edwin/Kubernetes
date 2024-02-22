@@ -1,6 +1,6 @@
 # Managing Labels and Selectors
 
-<h1> Key terms</h1>
+<h5> Key terms</h5>
 
 1 - **Labels** 
 
@@ -10,7 +10,7 @@ key-value pairs attached to various K8s objects, including pods, services, nodes
 
 Mechanisms used to filter and select resources based on their associated labels.
 
-<h1> Implimentation<h1>
+<h6> Implimentation<h6>
 
 1 -  Log into the Master Node
 
