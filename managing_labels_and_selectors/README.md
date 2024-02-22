@@ -16,6 +16,7 @@ Mechanisms used to filter and select resources based on their associated labels.
 
  > ssh Name_Of_Your_Master_Node  and Your_Password
 
+
 2 - Create the Kubernete Pod Production Environment 
 
  > kubectl run prod_env --image=nginx:latest --dry-run=client -o yaml > prod_env.yaml 
@@ -26,15 +27,18 @@ Mechanisms used to filter and select resources based on their associated labels.
 
  > kubectl get pods --show-labels
 
+
 3 - Create the Kubernete Pod  Development Environment
 
  > kubectl run dev_env --image=nginx --dry-run=client -o yaml > dev_env.yaml
 
  > kubectl create -f dev_env.yaml
 
+
 4 - List Pods using Labels Selectors
 
  > kubectl get pods -l environment=production
+ 
 
 5 - Delete Pods using Labels Selectors
 
